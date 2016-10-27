@@ -1,0 +1,23 @@
+{
+  "name": "Zancollor",
+  "description": "Zancollor Product 3D Viewer",
+  "homepage": "http://www.zancollor.com.br",
+  "author": {
+    "name": "Leonardo Moreira",
+    "email": "eu@leonardomoreira.com.br"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leonardomoreira/fixeads.git"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/leonardomoreira/fixeads/issues"
+  },
+  "devDependencies": {
+    "bower": "^1.7.7"
+  },
+  "environment": "dist",
+  "readme": "README.md"
+}

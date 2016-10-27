@@ -1,0 +1,26 @@
+{
+  "name": "Zancollor",
+  "description": "Zancollor Product 3D Viewer",
+  "main": "",
+  "authors": [
+    {
+      "name": "Leonardo Moreira",
+      "email": "eu@leonardomoreira.com.br"
+    }
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/core"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "modernizr": "^3.3.1"
+  }
+}
