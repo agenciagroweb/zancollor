@@ -40,10 +40,12 @@ var zancollor = {
         viewer.setParameter('InitRotationX', -30);
         viewer.setParameter('InitRotationY', 30);
         viewer.setParameter('InitRotationZ', 30);
-        viewer.setParameter('ModelColor', '#ffffff');
-        viewer.setParameter('BackgroundColor1', '#f2f2f2');
-        viewer.setParameter('BackgroundColor2', '#f2f2f2');
+        viewer.setParameter('ModelColor', '#94D0C4');
+        viewer.setParameter('BackgroundColor1', '#e0ebef');
+        viewer.setParameter('BackgroundColor2', '#e0ebef');
         viewer.setParameter('RenderMode', 'smooth');
+
+        $(".cls-1, .cls-4").css('fill', '#94D0C4');
 
         if (Modernizr.webgl) {
             viewer.setParameter('MipMapping', JSC3D.PlatformInfo.supportWebGL ? 'off' : 'on');
@@ -70,21 +72,63 @@ $(document).ready( function(){
     });
 
     $('*').filter(function() {
+
         if ($(this).data('hexa') !== undefined)
             $(this).css('background-color', "#"+$(this).data('hexa'));
     });
 
-    $(".item > a").on("click",function(e){
+    $(".item").on("click",function(e){
 
         e.preventDefault();
 
+        $(".item").removeClass('active');
+        $(this).addClass('active');
+
         var hexa = $(this).attr('data-hexa');
 
-        $("#cor").css("fill", '#' + hexa );
+        $("#cor").css("fill", '#' + hexa);
+        $(".cls-1, .cls-4").css('fill', '#' + hexa);
+
+        $(".code").html($(this).data('code'));
 
         viewer.setParameter('ModelColor', '#' + hexa );
         viewer.init();
         viewer.update();
     });
+
+    $(".item-custom-1, .item-custom-2, .item-custom-3").on("click", function(e){
+
+        e.preventDefault();
+
+        var item = $(this);
+
+        $(".item-custom").removeClass('active');
+        $(item).addClass('active');
+
+        $(".custom-color").minicolors({
+            inline : true,
+            change : function(value, opacity) {
+
+                $(".minicolors .example").css('background', value);
+                $(item).css('background', value);
+
+
+            }
+        });
+
+    });
+
+
+    $(".top-right").css('border-top-width', ($(window).width() * 20 / 100) + 'px');
+    $(".top-right").css('border-left-width', ($(window).width() * 20 / 100) + 'px');
+
+    $(".left").css('border-top-width', ($(window).width() * 10 / 100) + 'px');
+    $(".left").css('border-bottom-width', ($(window).width() * 10 / 100) + 'px');
+    $(".left").css('border-left-width', ($(window).width() * 10 / 100) + 'px');
+    $(".left").css('top', '-' + (39 + ($(window).width() * 10 / 100) + ($('footer').height())) + 'px');
+
+    $(".right").css('border-top-width', ($('footer').height() + 119) + 'px');
+    $(".right").css('border-right-width', ($('footer').height() + 119) + 'px');
+    $(".right").css('top', '-' + (39 + ($('footer').height())) + 'px');
 
 });

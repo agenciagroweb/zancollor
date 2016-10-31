@@ -21,6 +21,8 @@
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/core/jquery-modal/jquery.modal.min.css">
+    <link rel="stylesheet" href="assets/core/jquery-minicolors/jquery.minicolors.css">
 
     <!--[if lte IE 9]>
     <link rel="stylesheet" href="assets/vendor/ie9.css" />
@@ -34,10 +36,26 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <div class="artwork">
+        <div class="top"></div>
+        <div class="top-right"></div>
+    </div>
+
+    <header class="container-fluid">
+        <div class="col-lg-12">
+            <h1 class="col-lg-3 col-lg-offset-1"><a href="http://www.zancollor.com.br">Zancollor</a></h1>
+
+            <div class="col-lg-8 subtitle-bar">
+                <h2>Simulador de Cores <i class="box"></i></h2>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+
     <div class="container">
 
-        <div class="canvas">
-            <canvas id="viewer" width="400" height="400">
+        <div class="canvas col-lg-5">
+            <canvas id="viewer" width="300" height="350">
                 <!--[if lt IE 9]>
                 <img src="http://www.cromex.com.br/simulador-de-cores/img/3d_IE.png?v1">
                 <![endif]-->
@@ -45,69 +63,136 @@
             
             <nav>
                 <ul>
-                    <li><a href="javascript:void(0);" id="canvas-prev"><img src="http://www.cromex.com.br/simulador-de-cores/img/setaL.png"></a></li>
-                    <li><a href="javascript:void(0);" id="canvas-next"><img src="http://www.cromex.com.br/simulador-de-cores/img/setaR.png"></a></li>
+                    <li id="canvas-prev"></li>
+                    <li id="canvas-next"></li>
                 </ul>
             </nav>
         </div>
         <!-- /canvas -->
 
-        <div class="colors">
-            <p class="bold">Selecione uma cor:</p>
-            
-            <ul>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1042" data-hexa="94D0C4" data-rgb="148, 208, 196"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1505" data-hexa="77B844" data-rgb="119, 184, 68"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1039" data-hexa="4DAD53" data-rgb="77, 173, 83"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1036" data-hexa="3A654A" data-rgb="58, 101, 74"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1012" data-hexa="59C0ED" data-rgb="89, 192, 237"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1501" data-hexa="1E85C7" data-rgb="30, 133, 199"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1366" data-hexa="2D4277" data-rgb="45, 66, 119"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1011" data-hexa="383546" data-rgb="56, 53, 70"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1254" data-hexa="F7F29E" data-rgb="247, 242, 158"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1248" data-hexa="F7E857" data-rgb="247, 232, 87"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1004" data-hexa="FBE829" data-rgb="251, 232, 41"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1005" data-hexa="F8BA3F" data-rgb="248, 186, 63"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1111" data-hexa="DE231A" data-rgb="222, 35, 26"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1030" data-hexa="C9261F" data-rgb="201, 38, 31"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1054" data-hexa="B42521" data-rgb="180, 37, 33"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1503-1" data-hexa="A32928" data-rgb="163, 41, 40"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1416" data-hexa="F5A465" data-rgb="245, 164, 101"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1027" data-hexa="D1703B" data-rgb="209, 112, 59"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1026" data-hexa="C75226" data-rgb="199, 82, 38"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1514" data-hexa="E07429" data-rgb="224, 116, 41"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1424" data-hexa="EF998C" data-rgb="ef998c"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1478-1" data-hexa="EE9ABC" data-rgb="238, 154, 188"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1014" data-hexa="D35181" data-rgb="211, 81, 129"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1572" data-hexa="8D2035" data-rgb="141, 32, 53"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1506" data-hexa="825897" data-rgb="130, 88, 151"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1857" data-hexa="5A1C33" data-rgb="90, 28, 51"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1182" data-hexa="584D9C" data-rgb="88, 77, 156"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1022" data-hexa="483C92" data-rgb="72, 60, 146"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1195" data-hexa="CDCEC6" data-rgb="205, 206, 198"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1830" data-hexa="9D9B8C" data-rgb="157, 155, 140"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1222" data-hexa="5F646A" data-rgb="95, 100, 106"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 0069/14" data-hexa="6F6F67" data-rgb="111, 111, 103"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1463" data-hexa="B28A4F" data-rgb="178, 138, 79"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1580" data-hexa="A06C45" data-rgb="160, 108, 69"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1290" data-hexa="573229" data-rgb="87, 50, 41"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1018" data-hexa="2D1F12" data-rgb="45, 31, 18"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1274" data-hexa="FBE09B" data-rgb="251, 224, 155"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1426" data-hexa="AF7F41" data-rgb="175, 127, 65"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1427" data-hexa="4B2A25" data-rgb="75, 42, 37"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1018" data-hexa="2D1F12" data-rgb="45, 31, 18"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1220" data-hexa="D9DA00" data-rgb="217, 218, 0"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1185" data-hexa="EA5534" data-rgb="234, 85, 52"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1213" data-hexa="DF3890" data-rgb="223, 56, 144"></a></li>
-                <li class="item"><a href="javascript:void(0);" data-code="MB-PE 1178" data-hexa="30A429" data-rgb="48, 164, 41"></a></li>
-            </ul>
+        <div class="palette col-lg-7">
+
+            <div class="colors col-lg-6">
+                <p class="bold">Selecione uma cor:</p>
+
+                <ul>
+                    <li class="item active" data-code="MB-PE 1042" data-hexa="94D0C4" data-rgb="148, 208, 196"></li>
+                    <li class="item" data-code="MB-PE 1505" data-hexa="77B844" data-rgb="119, 184, 68"></li>
+                    <li class="item" data-code="MB-PE 1039" data-hexa="4DAD53" data-rgb="77, 173, 83"></li>
+                    <li class="item" data-code="MB-PE 1036" data-hexa="3A654A" data-rgb="58, 101, 74"></li>
+                    <li class="item" data-code="MB-PE 1012" data-hexa="59C0ED" data-rgb="89, 192, 237"></li>
+                    <li class="item" data-code="MB-PE 1501" data-hexa="1E85C7" data-rgb="30, 133, 199"></li>
+                    <li class="item" data-code="MB-PE 1366" data-hexa="2D4277" data-rgb="45, 66, 119"></li>
+                    <li class="item" data-code="MB-PE 1011" data-hexa="383546" data-rgb="56, 53, 70"></li>
+                    <li class="item" data-code="MB-PE 1254" data-hexa="F7F29E" data-rgb="247, 242, 158"></li>
+                    <li class="item" data-code="MB-PE 1248" data-hexa="F7E857" data-rgb="247, 232, 87"></li>
+                    <li class="item" data-code="MB-PE 1004" data-hexa="FBE829" data-rgb="251, 232, 41"></li>
+                    <li class="item" data-code="MB-PE 1005" data-hexa="F8BA3F" data-rgb="248, 186, 63"></li>
+                    <li class="item" data-code="MB-PE 1111" data-hexa="DE231A" data-rgb="222, 35, 26"></li>
+                    <li class="item" data-code="MB-PE 1030" data-hexa="C9261F" data-rgb="201, 38, 31"></li>
+                    <li class="item" data-code="MB-PE 1054" data-hexa="B42521" data-rgb="180, 37, 33"></li>
+                    <li class="item" data-code="MB-PE 1503-1" data-hexa="A32928" data-rgb="163, 41, 40"></li>
+                    <li class="item" data-code="MB-PE 1416" data-hexa="F5A465" data-rgb="245, 164, 101"></li>
+                    <li class="item" data-code="MB-PE 1027" data-hexa="D1703B" data-rgb="209, 112, 59"></li>
+                    <li class="item" data-code="MB-PE 1026" data-hexa="C75226" data-rgb="199, 82, 38"></li>
+                    <li class="item" data-code="MB-PE 1514" data-hexa="E07429" data-rgb="224, 116, 41"></li>
+                    <li class="item" data-code="MB-PE 1424" data-hexa="EF998C" data-rgb="ef998c"></li>
+                    <li class="item" data-code="MB-PE 1478-1" data-hexa="EE9ABC" data-rgb="238, 154, 188"></li>
+                    <li class="item" data-code="MB-PE 1014" data-hexa="D35181" data-rgb="211, 81, 129"></li>
+                    <li class="item" data-code="MB-PE 1572" data-hexa="8D2035" data-rgb="141, 32, 53"></li>
+                    <li class="item" data-code="MB-PE 1506" data-hexa="825897" data-rgb="130, 88, 151"></li>
+                    <li class="item" data-code="MB-PE 1857" data-hexa="5A1C33" data-rgb="90, 28, 51"></li>
+                    <li class="item" data-code="MB-PE 1182" data-hexa="584D9C" data-rgb="88, 77, 156"></li>
+                    <li class="item" data-code="MB-PE 1022" data-hexa="483C92" data-rgb="72, 60, 146"></li>
+                    <li class="item" data-code="MB-PE 1195" data-hexa="CDCEC6" data-rgb="205, 206, 198"></li>
+                    <li class="item" data-code="MB-PE 1830" data-hexa="9D9B8C" data-rgb="157, 155, 140"></li>
+                    <li class="item" data-code="MB-PE 1222" data-hexa="5F646A" data-rgb="95, 100, 106"></li>
+                    <li class="item" data-code="MB-PE 0069/14" data-hexa="6F6F67" data-rgb="111, 111, 103"></li>
+                    <li class="item" data-code="MB-PE 1463" data-hexa="B28A4F" data-rgb="178, 138, 79"></li>
+                    <li class="item" data-code="MB-PE 1580" data-hexa="A06C45" data-rgb="160, 108, 69"></li>
+                    <li class="item" data-code="MB-PE 1290" data-hexa="573229" data-rgb="87, 50, 41"></li>
+                    <li class="item" data-code="MB-PE 1018" data-hexa="2D1F12" data-rgb="45, 31, 18"></li>
+                    <li class="item" data-code="MB-PE 1274" data-hexa="FBE09B" data-rgb="251, 224, 155"></li>
+                    <li class="item" data-code="MB-PE 1426" data-hexa="AF7F41" data-rgb="175, 127, 65"></li>
+                    <li class="item" data-code="MB-PE 1427" data-hexa="4B2A25" data-rgb="75, 42, 37"></li>
+                    <li class="item" data-code="MB-PE 1018" data-hexa="2D1F12" data-rgb="45, 31, 18"></li>
+                    <li class="item" data-code="MB-PE 1220" data-hexa="D9DA00" data-rgb="217, 218, 0"></li>
+                    <li class="item" data-code="MB-PE 1185" data-hexa="EA5534" data-rgb="234, 85, 52"></li>
+                    <li class="item" data-code="MB-PE 1213" data-hexa="DF3890" data-rgb="223, 56, 144"></li>
+                    <li class="item" data-code="MB-PE 1178" data-hexa="30A429" data-rgb="48, 164, 41"></li>
+                </ul>
+
+                <p>Customize sua cor:</p>
+
+                <ul>
+                    <li class="item-custom-1" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
+                    <li class="item-custom-2" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
+                    <li class="item-custom-3" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
+                    <div class="actions">
+                        <span class="budget"><a href="#minicolors" rel="modal:open">Orçamento</a></span>
+                    </div>
+                </ul>
+
+            </div>
+            <!-- /colors -->
+
+            <div class="pattern col-lg-6">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 261 304.96"> <defs> <linearGradient id="svg_gradiente" x1="199.5" y1="544.94" x2="351.94" y2="402.16" gradientUnits="userSpaceOnUse"> <stop offset="0"/> <stop offset="0.7" stop-opacity="0.5"/> </linearGradient> </defs> <title>bloco2</title> <g> <path class="cls-1" d="M398.81,270.91H197.47a28,28,0,0,0-28,28V493.7H426.81V298.91A28,28,0,0,0,398.81,270.91Z" transform="translate(-167.14 -268.61)"/> <g class="cls-2"> <path class="cls-3" d="M398.81,270.91H197.47a28,28,0,0,0-28,28V493.7H426.81V298.91A28,28,0,0,0,398.81,270.91Z" transform="translate(-167.14 -268.61)"/> </g> <path class="cls-4" d="M398.81,571.87H197.47a28,28,0,0,1-28-28V349.09H426.81V543.88A28,28,0,0,1,398.81,571.87Z" transform="translate(-167.14 -268.61)"/> <g class="cls-5"> <path class="cls-6" d="M398.81,571.87H197.47a28,28,0,0,1-28-28V349.09H426.81V543.88A28,28,0,0,1,398.81,571.87Z" transform="translate(-167.14 -268.61)"/> </g> <path class="cls-4" d="M400.84,273.61a22.33,22.33,0,0,1,22.3,22.3V546.26a22.33,22.33,0,0,1-22.3,22.3H194.45a22.33,22.33,0,0,1-22.3-22.3V295.91a22.33,22.33,0,0,1,22.3-22.3H400.84m0-5H194.45a27.31,27.31,0,0,0-27.3,27.3V546.26a27.3,27.3,0,0,0,27.3,27.3H400.84a27.31,27.31,0,0,0,27.3-27.3V295.91a27.31,27.31,0,0,0-27.3-27.3h0Z" transform="translate(-167.14 -268.61)"/> </g> </svg>
+                <span class="code">MB-PE 1042</span>
+            </div>
+            <!-- /pattern -->
+
         </div>
-        <!-- /colors -->
+        <!-- /palette -->
 
     </div>
     <!-- /container -->
 
+    <footer>
+        <div class="container">
+            <div class="important col-lg-12">
+                <h3>Observações Importantes:</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+            </div>
+
+            <div class="contact col-lg-12">
+                <h3>Entre em contato:</h3>
+
+                <ul>
+                    <li>0800.179400 / (11) 3856.1000</li>
+                    <li><a href="mailto:vendas.internas@zancollor.com.br">vendas.internas@zancollor.com.br</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="artwork">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </footer>
+    <!-- /footer -->
+
+    <div id="minicolors" class="modal" style="display: none;">
+        <header>
+            <h3>Selecione uma cor customizada:</h3>
+        </header>
+
+        <div class="content minicolors">
+            <div class="color">
+                <input type="text" id="brightness-demo" class="form-control custom-color" data-control="brightness" value="#00ffff">
+            </div>
+
+            <div class="example">
+
+            </div>
+        </div>
+    </div>
+    <!-- /minicolors -->
+
     <script src="assets/core/jquery/dist/jquery.min.js"></script>
+    <script src="assets/core/jquery-modal/jquery.modal.min.js"></script>
+    <script src="assets/core/jquery-minicolors/jquery.minicolors.min.js"></script>
     <script src="assets/core/modernizr/modernizr-2.6.2.min.js"></script>
     <!-- /core -->
 
