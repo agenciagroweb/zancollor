@@ -6,9 +6,9 @@ var zancollor = {
     index : 0,
 
     models : [
-        './assets/app/obj/cup.obj',
-        './assets/app/obj/basket.obj',
-        './assets/app/obj/spoon.obj'
+        './assets/app/obj/dove.obj',
+        './assets/app/obj/tank.obj',
+        './assets/app/obj/cup.obj'
     ],
 
     next : function() {
@@ -29,6 +29,16 @@ var zancollor = {
             this.index = (this.models.length-1);
 
         viewer.replaceSceneFromUrl(this.models[this.index]);
+    },
+
+    update : function(hexa, code) {
+
+        $(".cls-1, .cls-4").css('fill', hexa);
+        $(".code").html(code);
+
+        viewer.setParameter('ModelColor', hexa);
+        viewer.init();
+        viewer.update();
     },
 
     init : function() {
@@ -82,27 +92,25 @@ $(document).ready( function(){
         e.preventDefault();
 
         $(".item").removeClass('active');
+        $(".item-custom").removeClass('active');
+
         $(this).addClass('active');
 
         var hexa = $(this).attr('data-hexa');
 
-        $("#cor").css("fill", '#' + hexa);
-        $(".cls-1, .cls-4").css('fill', '#' + hexa);
-
-        $(".code").html($(this).data('code'));
-
-        viewer.setParameter('ModelColor', '#' + hexa );
-        viewer.init();
-        viewer.update();
+        zancollor.update('#' + hexa, $(this).data('code'));
     });
 
-    $(".item-custom-1, .item-custom-2, .item-custom-3").on("click", function(e){
+    $(".item-custom").on("click", function(e){
 
         e.preventDefault();
 
         var item = $(this);
+        console.log(item);
 
         $(".item-custom").removeClass('active');
+        $(".item").removeClass('active');
+
         $(item).addClass('active');
 
         $(".custom-color").minicolors({
@@ -110,11 +118,23 @@ $(document).ready( function(){
             change : function(value, opacity) {
 
                 $(".minicolors .example").css('background', value);
-                $(item).css('background', value);
+                $(".item-custom.active").css('background', value);
 
-
+                $(".item-custom.active").attr('data-hexa', value.replace(/^#/, "").toUpperCase());
+                $(".item-custom.active").attr('data-code', value.replace(/^#/, "").toUpperCase());
             }
         });
+
+    });
+
+    $("#minicolors .submit").on("click", function(e){
+
+        e.preventDefault();
+
+        var hexa = "#" + $(".item-custom.active").attr('data-hexa');
+        var code = "MB-PE-C " + $(".item-custom.active").attr('data-code');
+
+        zancollor.update(hexa, code);
 
     });
 

@@ -54,19 +54,21 @@
 
     <div class="container">
 
-        <div class="canvas col-lg-5">
-            <canvas id="viewer" width="300" height="350">
-                <!--[if lt IE 9]>
-                <img src="http://www.cromex.com.br/simulador-de-cores/img/3d_IE.png?v1">
-                <![endif]-->
-            </canvas>
-            
-            <nav>
-                <ul>
-                    <li id="canvas-prev"></li>
-                    <li id="canvas-next"></li>
-                </ul>
-            </nav>
+        <div class="canvas-wrapper col-lg-5">
+            <div class="canvas">
+                <canvas id="viewer" width="300" height="350">
+                    <!--[if lt IE 9]>
+                    <img src="http://www.cromex.com.br/simulador-de-cores/img/3d_IE.png?v1">
+                    <![endif]-->
+                </canvas>
+
+                <nav>
+                    <ul>
+                        <li id="canvas-prev"></li>
+                        <li id="canvas-next"></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
         <!-- /canvas -->
 
@@ -125,11 +127,11 @@
                 <p>Customize sua cor:</p>
 
                 <ul>
-                    <li class="item-custom-1" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
-                    <li class="item-custom-2" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
-                    <li class="item-custom-3" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
+                    <li class="item-custom" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
+                    <li class="item-custom" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
+                    <li class="item-custom" data-code="" data-hexa="" data-rgb=""><a href="#minicolors" rel="modal:open"></a></li>
                     <div class="actions">
-                        <span class="budget"><a href="#minicolors" rel="modal:open">Orçamento</a></span>
+                        <span class="budget"><a href="#orcamento" rel="modal:open">Orçamento</a></span>
                     </div>
                 </ul>
 
@@ -160,8 +162,8 @@
                 <h3>Entre em contato:</h3>
 
                 <ul>
-                    <li>0800.179400 / (11) 3856.1000</li>
-                    <li><a href="mailto:vendas.internas@zancollor.com.br">vendas.internas@zancollor.com.br</a></li>
+                    <li>0800.000000 / (11) 0000.0000</li>
+                    <li><a href="mailto:vendas@zancollor.com.br">vendas@zancollor.com.br</a></li>
                 </ul>
             </div>
         </div>
@@ -187,8 +189,47 @@
 
             </div>
         </div>
+
+        <ul class="buttons">
+            <li><a href="#close-modal" rel="modal:close" class="btn default submit">Salvar</a></li>
+        </ul>
     </div>
     <!-- /minicolors -->
+
+    <div id="orcamento" class="modal" style="display: none;">
+        <header>
+            <h3>Solicite um orçamento:</h3>
+        </header>
+
+        <div class="content">
+            <form id="orcamento" action="#">
+                <div class="form-group">
+                    <label>Seu nome:</label>
+                    <input type="text" name="name" id="name" placeholder="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Seu telefone:</label>
+                    <input type="text" name="phone" id="phone" placeholder="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Seu e-mail:</label>
+                    <input type="text" name="mail" id="mail" placeholder="" />
+                </div>
+
+                <div class="form-group text">
+                    <input type="checkbox" name="newsletter" id="newsletter" /> Se você deseja se atualizar com as últimas noticias do setor, assine a nossa newsletter gratuitamente.
+                </div>
+            </form>
+        </div>
+
+        <ul class="buttons">
+            <li><a href="#close-modal" rel="modal:close" class="btn reset">Cancelar</a></li>
+            <li><a href="#close-modal" rel="modal:close" class="btn default submit">Enviar</a></li>
+        </ul>
+    </div>
+    <!-- /orcamento -->
 
     <script src="assets/core/jquery/dist/jquery.min.js"></script>
     <script src="assets/core/jquery-modal/jquery.modal.min.js"></script>
