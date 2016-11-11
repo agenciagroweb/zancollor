@@ -978,6 +978,10 @@ body {
     right: 0;
     border-top: 0px solid #0c3274;
     border-left: 0px solid transparent;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
 }
@@ -1026,6 +1030,10 @@ header {
         margin: 9px 0 0 5px;
       }
     }
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 
   &:after {
@@ -1037,6 +1045,11 @@ header {
     height: 0;
     margin-bottom: 10px;
   }
+
+  @media (max-width: 767px) {
+    margin: 20px 0;
+    text-align: center;
+  }
 }
 
 .container {
@@ -1044,7 +1057,7 @@ header {
   z-index: 1;
 
   .canvas-wrapper {
-    background: url('../images/box-shadow.png') no-repeat center 440px;
+    background: url('../images/box-shadow.png') no-repeat center 455px;
   }
 
   .canvas {
@@ -1061,8 +1074,26 @@ header {
     border-top-right-radius: 10px;
     margin-bottom: 80px;
 
+    .rotate {
+      width: 42px;
+      height: 19px;
+      background: url('../images/3d.png') no-repeat center;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
     canvas {
       margin: 45px 72px;
+    }
+
+    span {
+      color: silver;
+      font-size: 11px;
+      display: block;
+      position: absolute;
+      bottom: -15px;
+      left: 0px;
     }
 
     nav {
@@ -1226,11 +1257,24 @@ footer {
   background: #041c45;
   position: relative;
 
+  .developer {
+    text-align: right;
+
+    a.groweb {
+      margin-top: 35px;
+      width: 67px;
+      height: 24px;
+      display: inline-block;
+      background: url('../images/groweb.png') no-repeat;
+    }
+  }
+
   .container {
     font-size: 12px;
     line-height: 18px;
     color: white;
-    z-index: 9999;
+    z-index: 4;
+
     .important {
       margin-bottom: 80px;
 
@@ -1294,6 +1338,7 @@ footer {
 
 .modal {
   display: none;
+  z-index: 5 !important;
 
   header {
     width: 100%;

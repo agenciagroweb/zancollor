@@ -906,6 +906,9 @@ body {
   right: 0;
   border-top: 0px solid #0c3274;
   border-left: 0px solid transparent; }
+  @media (max-width: 767px) {
+    .artwork .top-right {
+      display: none; } }
 
 header {
   margin: 70px 0 70px 0;
@@ -940,6 +943,9 @@ header {
         line-height: 17px;
         vertical-align: top;
         margin: 9px 0 0 5px; }
+    @media (max-width: 1200px) {
+      header .subtitle-bar {
+        display: none; } }
   header:after {
     content: ".";
     display: block;
@@ -948,12 +954,16 @@ header {
     line-height: 0;
     height: 0;
     margin-bottom: 10px; }
+  @media (max-width: 767px) {
+    header {
+      margin: 20px 0;
+      text-align: center; } }
 
 .container {
   position: relative;
   z-index: 1; }
   .container .canvas-wrapper {
-    background: url("../images/box-shadow.png") no-repeat center 440px; }
+    background: url("../images/box-shadow.png") no-repeat center 455px; }
   .container .canvas {
     position: relative;
     float: left;
@@ -965,8 +975,22 @@ header {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin-bottom: 80px; }
+    .container .canvas .rotate {
+      width: 42px;
+      height: 19px;
+      background: url("../images/3d.png") no-repeat center;
+      position: absolute;
+      top: 20px;
+      right: 20px; }
     .container .canvas canvas {
       margin: 45px 72px; }
+    .container .canvas span {
+      color: silver;
+      font-size: 11px;
+      display: block;
+      position: absolute;
+      bottom: -15px;
+      left: 0px; }
     .container .canvas nav {
       position: absolute;
       width: 90%;
@@ -1073,11 +1097,19 @@ footer {
   padding: 40px 0 80px 0;
   background: #041c45;
   position: relative; }
+  footer .developer {
+    text-align: right; }
+    footer .developer a.groweb {
+      margin-top: 35px;
+      width: 67px;
+      height: 24px;
+      display: inline-block;
+      background: url("../images/groweb.png") no-repeat; }
   footer .container {
     font-size: 12px;
     line-height: 18px;
     color: white;
-    z-index: 9999; }
+    z-index: 4; }
     footer .container .important {
       margin-bottom: 80px; }
       footer .container .important h3 {
@@ -1117,7 +1149,8 @@ footer {
       z-index: 2; }
 
 .modal {
-  display: none; }
+  display: none;
+  z-index: 5 !important; }
   .modal header {
     width: 100%;
     height: auto;

@@ -37,13 +37,13 @@
     <![endif]-->
 
     <div class="artwork">
-        <div class="top"></div>
-        <div class="top-right"></div>
+        <div class="top"> </div>
+        <div class="top-right"> </div>
     </div>
 
     <header class="container-fluid">
         <div class="col-lg-12">
-            <h1 class="col-lg-3 col-lg-offset-1"><a href="http://www.zancollor.com.br">Zancollor</a></h1>
+            <h1 class="col-lg-3 col-sm-12 col-lg-offset-1"><a href="http://www.zancollor.com.br">Zancollor</a></h1>
 
             <div class="col-lg-8 subtitle-bar">
                 <h2>Simulador de Cores <i class="box"></i></h2>
@@ -54,8 +54,10 @@
 
     <div class="container">
 
-        <div class="canvas-wrapper col-lg-5">
+        <div class="canvas-wrapper col-lg-5 col-md-12 col-sm-12">
             <div class="canvas">
+                <div class="rotate"></div>
+
                 <canvas id="viewer" width="300" height="350">
                     <!--[if lt IE 9]>
                     <img src="http://www.cromex.com.br/simulador-de-cores/img/3d_IE.png?v1">
@@ -68,60 +70,61 @@
                         <li id="canvas-next"></li>
                     </ul>
                 </nav>
+
+                <span>Imagem meramente ilustrativa.</span>
             </div>
         </div>
         <!-- /canvas -->
 
-        <div class="palette col-lg-7">
+        <div class="palette col-lg-7 col-md-12 col-sm-12">
 
             <div class="colors col-lg-6">
                 <p class="bold">Selecione uma cor:</p>
 
                 <ul>
-                    <li class="item active" data-code="MB-PE 1042" data-hexa="94D0C4" data-rgb="148, 208, 196"></li>
-                    <li class="item" data-code="MB-PE 1505" data-hexa="77B844" data-rgb="119, 184, 68"></li>
+                    <li class="item active" data-code="MB-PE 1036" data-hexa="3A654A" data-rgb="58, 101, 74"></li>
+                    <li class="item" data-code="MB-PE 1178" data-hexa="30A429" data-rgb="48, 164, 41"></li>
                     <li class="item" data-code="MB-PE 1039" data-hexa="4DAD53" data-rgb="77, 173, 83"></li>
-                    <li class="item" data-code="MB-PE 1036" data-hexa="3A654A" data-rgb="58, 101, 74"></li>
-                    <li class="item" data-code="MB-PE 1012" data-hexa="59C0ED" data-rgb="89, 192, 237"></li>
-                    <li class="item" data-code="MB-PE 1501" data-hexa="1E85C7" data-rgb="30, 133, 199"></li>
-                    <li class="item" data-code="MB-PE 1366" data-hexa="2D4277" data-rgb="45, 66, 119"></li>
-                    <li class="item" data-code="MB-PE 1011" data-hexa="383546" data-rgb="56, 53, 70"></li>
+                    <li class="item" data-code="MB-PE 1505" data-hexa="77B844" data-rgb="119, 184, 68"></li>
+                    <li class="item" data-code="MB-PE 1042" data-hexa="94D0C4" data-rgb="148, 208, 196"></li>
                     <li class="item" data-code="MB-PE 1254" data-hexa="F7F29E" data-rgb="247, 242, 158"></li>
+                    <li class="item" data-code="MB-PE 1274" data-hexa="FBE09B" data-rgb="251, 224, 155"></li>
                     <li class="item" data-code="MB-PE 1248" data-hexa="F7E857" data-rgb="247, 232, 87"></li>
                     <li class="item" data-code="MB-PE 1004" data-hexa="FBE829" data-rgb="251, 232, 41"></li>
+                    <li class="item" data-code="MB-PE 1220" data-hexa="D9DA00" data-rgb="217, 218, 0"></li>
                     <li class="item" data-code="MB-PE 1005" data-hexa="F8BA3F" data-rgb="248, 186, 63"></li>
-                    <li class="item" data-code="MB-PE 1111" data-hexa="DE231A" data-rgb="222, 35, 26"></li>
-                    <li class="item" data-code="MB-PE 1030" data-hexa="C9261F" data-rgb="201, 38, 31"></li>
-                    <li class="item" data-code="MB-PE 1054" data-hexa="B42521" data-rgb="180, 37, 33"></li>
-                    <li class="item" data-code="MB-PE 1503-1" data-hexa="A32928" data-rgb="163, 41, 40"></li>
                     <li class="item" data-code="MB-PE 1416" data-hexa="F5A465" data-rgb="245, 164, 101"></li>
                     <li class="item" data-code="MB-PE 1027" data-hexa="D1703B" data-rgb="209, 112, 59"></li>
                     <li class="item" data-code="MB-PE 1026" data-hexa="C75226" data-rgb="199, 82, 38"></li>
                     <li class="item" data-code="MB-PE 1514" data-hexa="E07429" data-rgb="224, 116, 41"></li>
-                    <li class="item" data-code="MB-PE 1424" data-hexa="EF998C" data-rgb="ef998c"></li>
-                    <li class="item" data-code="MB-PE 1478-1" data-hexa="EE9ABC" data-rgb="238, 154, 188"></li>
-                    <li class="item" data-code="MB-PE 1014" data-hexa="D35181" data-rgb="211, 81, 129"></li>
+                    <li class="item" data-code="MB-PE 1185" data-hexa="EA5534" data-rgb="234, 85, 52"></li>
+                    <li class="item" data-code="MB-PE 1111" data-hexa="DE231A" data-rgb="222, 35, 26"></li>
+                    <li class="item" data-code="MB-PE 1030" data-hexa="C9261F" data-rgb="201, 38, 31"></li>
+                    <li class="item" data-code="MB-PE 1054" data-hexa="B42521" data-rgb="180, 37, 33"></li>
+                    <li class="item" data-code="MB-PE 1503-1" data-hexa="A32928" data-rgb="163, 41, 40"></li>
                     <li class="item" data-code="MB-PE 1572" data-hexa="8D2035" data-rgb="141, 32, 53"></li>
-                    <li class="item" data-code="MB-PE 1506" data-hexa="825897" data-rgb="130, 88, 151"></li>
                     <li class="item" data-code="MB-PE 1857" data-hexa="5A1C33" data-rgb="90, 28, 51"></li>
-                    <li class="item" data-code="MB-PE 1182" data-hexa="584D9C" data-rgb="88, 77, 156"></li>
                     <li class="item" data-code="MB-PE 1022" data-hexa="483C92" data-rgb="72, 60, 146"></li>
+                    <li class="item" data-code="MB-PE 1182" data-hexa="584D9C" data-rgb="88, 77, 156"></li>
+                    <li class="item" data-code="MB-PE 1506" data-hexa="825897" data-rgb="130, 88, 151"></li>
+                    <li class="item" data-code="MB-PE 1213" data-hexa="DF3890" data-rgb="223, 56, 144"></li>
+                    <li class="item" data-code="MB-PE 1014" data-hexa="D35181" data-rgb="211, 81, 129"></li>
+                    <li class="item" data-code="MB-PE 1478-1" data-hexa="EE9ABC" data-rgb="238, 154, 188"></li>
+                    <li class="item" data-code="MB-PE 1424" data-hexa="EF998C" data-rgb="ef998c"></li>
+                    <li class="item" data-code="MB-PE 1012" data-hexa="59C0ED" data-rgb="89, 192, 237"></li>
+                    <li class="item" data-code="MB-PE 1501" data-hexa="1E85C7" data-rgb="30, 133, 199"></li>
+                    <li class="item" data-code="MB-PE 1366" data-hexa="2D4277" data-rgb="45, 66, 119"></li>
+                    <li class="item" data-code="MB-PE 1011" data-hexa="383546" data-rgb="56, 53, 70"></li>
+                    <li class="item" data-code="MB-PE 1427" data-hexa="4B2A25" data-rgb="75, 42, 37"></li>
+                    <li class="item" data-code="MB-PE 1290" data-hexa="573229" data-rgb="87, 50, 41"></li>
+                    <li class="item" data-code="MB-PE 1580" data-hexa="A06C45" data-rgb="160, 108, 69"></li>
+                    <li class="item" data-code="MB-PE 1426" data-hexa="AF7F41" data-rgb="175, 127, 65"></li>
+                    <li class="item" data-code="MB-PE 1463" data-hexa="B28A4F" data-rgb="178, 138, 79"></li>
                     <li class="item" data-code="MB-PE 1195" data-hexa="CDCEC6" data-rgb="205, 206, 198"></li>
                     <li class="item" data-code="MB-PE 1830" data-hexa="9D9B8C" data-rgb="157, 155, 140"></li>
-                    <li class="item" data-code="MB-PE 1222" data-hexa="5F646A" data-rgb="95, 100, 106"></li>
                     <li class="item" data-code="MB-PE 0069/14" data-hexa="6F6F67" data-rgb="111, 111, 103"></li>
-                    <li class="item" data-code="MB-PE 1463" data-hexa="B28A4F" data-rgb="178, 138, 79"></li>
-                    <li class="item" data-code="MB-PE 1580" data-hexa="A06C45" data-rgb="160, 108, 69"></li>
-                    <li class="item" data-code="MB-PE 1290" data-hexa="573229" data-rgb="87, 50, 41"></li>
+                    <li class="item" data-code="MB-PE 1222" data-hexa="5F646A" data-rgb="95, 100, 106"></li>
                     <li class="item" data-code="MB-PE 1018" data-hexa="2D1F12" data-rgb="45, 31, 18"></li>
-                    <li class="item" data-code="MB-PE 1274" data-hexa="FBE09B" data-rgb="251, 224, 155"></li>
-                    <li class="item" data-code="MB-PE 1426" data-hexa="AF7F41" data-rgb="175, 127, 65"></li>
-                    <li class="item" data-code="MB-PE 1427" data-hexa="4B2A25" data-rgb="75, 42, 37"></li>
-                    <li class="item" data-code="MB-PE 1018" data-hexa="2D1F12" data-rgb="45, 31, 18"></li>
-                    <li class="item" data-code="MB-PE 1220" data-hexa="D9DA00" data-rgb="217, 218, 0"></li>
-                    <li class="item" data-code="MB-PE 1185" data-hexa="EA5534" data-rgb="234, 85, 52"></li>
-                    <li class="item" data-code="MB-PE 1213" data-hexa="DF3890" data-rgb="223, 56, 144"></li>
-                    <li class="item" data-code="MB-PE 1178" data-hexa="30A429" data-rgb="48, 164, 41"></li>
                 </ul>
 
                 <p>Customize sua cor:</p>
@@ -158,13 +161,19 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
             </div>
 
-            <div class="contact col-lg-12">
+            <div class="row">
+            <div class="contact col-lg-6">
                 <h3>Entre em contato:</h3>
 
                 <ul>
-                    <li>0800.000000 / (11) 0000.0000</li>
+                    <li>(19) 3414.8290 </li>
                     <li><a href="mailto:vendas@zancollor.com.br">vendas@zancollor.com.br</a></li>
                 </ul>
+            </div>
+
+            <div class="developer col-lg-6 text-right">
+                <a href="http://www.groweb.com.br" target="_blank" class="groweb"></a>
+            </div>
             </div>
         </div>
 

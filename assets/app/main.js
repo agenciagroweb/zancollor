@@ -8,7 +8,7 @@ var zancollor = {
     models : [
         './assets/app/obj/dove.obj',
         './assets/app/obj/tank.obj',
-        './assets/app/obj/cup.obj'
+        './assets/app/obj/market_box.obj'
     ],
 
     next : function() {
@@ -50,12 +50,12 @@ var zancollor = {
         viewer.setParameter('InitRotationX', -30);
         viewer.setParameter('InitRotationY', 30);
         viewer.setParameter('InitRotationZ', 30);
-        viewer.setParameter('ModelColor', '#94D0C4');
+        viewer.setParameter('ModelColor', '#3A654A');
         viewer.setParameter('BackgroundColor1', '#e0ebef');
         viewer.setParameter('BackgroundColor2', '#e0ebef');
         viewer.setParameter('RenderMode', 'smooth');
 
-        $(".cls-1, .cls-4").css('fill', '#94D0C4');
+        $(".cls-1, .cls-4").css('fill', '#3A654A');
 
         if (Modernizr.webgl) {
             viewer.setParameter('MipMapping', JSC3D.PlatformInfo.supportWebGL ? 'off' : 'on');
