@@ -1214,12 +1214,12 @@ header {
 
       .code {
         position: absolute;
-        top: 63px;
+        top: 66px;
         left: 0;
         width: 100%;
         display: block;
         text-align: center;
-        font-size: 21px;
+        font-size: 20px;
         font-weight: bold;
         color: white;
         text-transform: uppercase;
@@ -1253,7 +1253,7 @@ header {
 
 footer {
   clear: both;
-  padding: 40px 0 80px 0;
+  padding: 40px 0 40px 0;
   background: #041c45;
   position: relative;
 
@@ -1276,7 +1276,7 @@ footer {
     z-index: 4;
 
     .important {
-      margin-bottom: 80px;
+      margin-bottom: 40px;
 
       h3 {
         font-size: 15px;
@@ -1435,6 +1435,10 @@ footer {
         border-radius: 4px;
         padding: 10px;
         font-size: 14px;
+
+        &.error {
+          border-color: red;
+        }
       }
 
       inpupt[type="checkbox"] {
@@ -1444,6 +1448,31 @@ footer {
       &.text {
         margin-top: 15px;
         font-size: 12px;
+      }
+    }
+
+    .error {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    @keyframes shake {
+      10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
       }
     }
   }
