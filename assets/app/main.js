@@ -138,6 +138,53 @@ $(document).ready( function(){
 
     });
 
+    $("#orcamento .submit").on("click", function(e){
+
+        e.preventDefault();
+
+        $("#orcamento").removeClass('error');
+        $("#name").removeClass('error');
+        $("#phone").removeClass('error');
+        $("#mail").removeClass('error');
+
+        if ($("#name").val() == "" || $("#phone").val() == "" || $("#mail").val() == "") {
+
+            if ($("#name").val() == "")
+                $("#name").addClass('error');
+
+            if ($("#phone").val() == "")
+                $("#phone").addClass('error');
+
+            if ($("#mail").val() == "")
+                $("#mail").addClass('error');
+
+            $("#orcamento").addClass('error');
+
+            return false;
+        }
+
+        var hexa = $(".item.active").attr('data-hexa');
+        var code = $("span.code").html();
+
+        if (typeof hexa == "undefined")
+            hexa = $(".item-custom.active").attr('data-hexa');
+
+        $.ajax({
+            method : "POST",
+            url : "mail.php",
+            data : {
+                name : $("#name").val(),
+                phone : $("#phone").val(),
+                mail : $("#mail").val(),
+                hexa : "#" + hexa,
+                code : code,
+                newsletter : "Sim"
+            }
+        });
+
+    });
+
+    $('.phone').mask('(00) 00000-0000');
 
     $(".top-right").css('border-top-width', ($(window).width() * 20 / 100) + 'px');
     $(".top-right").css('border-left-width', ($(window).width() * 20 / 100) + 'px');
@@ -147,8 +194,8 @@ $(document).ready( function(){
     $(".left").css('border-left-width', ($(window).width() * 10 / 100) + 'px');
     $(".left").css('top', '-' + (39 + ($(window).width() * 10 / 100) + ($('footer').height())) + 'px');
 
-    $(".right").css('border-top-width', ($('footer').height() + 119) + 'px');
-    $(".right").css('border-right-width', ($('footer').height() + 119) + 'px');
+    $(".right").css('border-top-width', ($('footer').height() + 79) + 'px');
+    $(".right").css('border-right-width', ($('footer').height() + 79) + 'px');
     $(".right").css('top', '-' + (39 + ($('footer').height())) + 'px');
 
 });
